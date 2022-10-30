@@ -16,9 +16,9 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(value = "register")
+    @PostMapping(value = "/register")
     public void registerCustomer(@RequestBody CustomerRequest customerRequest) {
         log.info("new customer registration {}", customerRequest);
-
+        customerService.registerCustomer(customerRequest);
     }
 }
